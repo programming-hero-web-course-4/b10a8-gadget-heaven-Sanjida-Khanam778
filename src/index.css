@@ -6,3 +6,13 @@
 body {
   font-family: "Sora";
 }
+
+.active{
+  text-decoration: underline;
+}
+
+.categoty-active{
+  text-decoration: none;
+  background-color: #9538E2;
+  color: white;
+}

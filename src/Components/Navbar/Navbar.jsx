@@ -1,8 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,51 +27,42 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            <NavLink>Home</NavLink>
+          </li>
+
+          <li>
+            <NavLink>Statistics</NavLink>
+          </li>
+          <li>
+            <NavLink>Dashboard</NavLink>
+          </li>
+          <li>
+            <NavLink>About</NavLink>
+          </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="text-xl font-bold">Gadget Heaven</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu-horizontal space-x-12">
           <li>
-            <a>Item 1</a>
+            <NavLink className={({isActive})=>isActive?'active':''} to='/'>Home</NavLink>
+          </li>
+
+          <li>
+            <NavLink className={({isActive})=>isActive?'active':''} to='/statistics'>Statistics</NavLink>
           </li>
           <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
+            <NavLink className={({isActive})=>isActive?'active':''} to='/dashboard'>Dashboard</NavLink>
           </li>
           <li>
-            <a>Item 3</a>
+            <NavLink className={({isActive})=>isActive?'active':''} to='/about'>About</NavLink>
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end space-x-4">
+        <div className="rounded-full p-2 bg-white"><img src="./cart.png" alt="" /></div>
+        <div className="rounded-full p-2 bg-white"><img src="./love.png" alt="" /></div>
       </div>
     </div>
   );
