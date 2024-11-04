@@ -1,9 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import './Navbar.css'
 
 const Navbar = () => {
+  const { pathname } = useLocation();
+  
   return (
-    <div className="navbar">
+   <div className={`${pathname.includes('/home')?'bg-[#9538E2] text-white navbar px-32 ':'bg-transparent'}`}>
+     <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,17 +31,17 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-            <NavLink>Home</NavLink>
+            <NavLink to='/products/allProducts'>Home</NavLink>
           </li>
 
           <li>
-            <NavLink>Statistics</NavLink>
+            <NavLink to='/statistics' className={({ isActive }) => `${isActive?'active-routes':''}`}>Statistics</NavLink>
           </li>
           <li>
-            <NavLink>Dashboard</NavLink>
+            <NavLink to='/dashboard'>Dashboard</NavLink>
           </li>
           <li>
-            <NavLink>About</NavLink>
+            <NavLink to='/about'>About</NavLink>
           </li>
           </ul>
         </div>
@@ -46,25 +50,26 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-horizontal space-x-12">
           <li>
-            <NavLink className={({isActive})=>isActive?'active':''} to='/'>Home</NavLink>
+            <NavLink to='/home/products/allProducts' className={({isActive})=>`font-medium ${isActive?'active-home':''}`}>Home</NavLink>
           </li>
 
           <li>
-            <NavLink className={({isActive})=>isActive?'active':''} to='/statistics'>Statistics</NavLink>
+            <NavLink to='/statistics' className={({isActive})=>`font-medium ${isActive?'active-routes':''}`}>Statistics</NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive?'active':''} to='/dashboard'>Dashboard</NavLink>
+            <NavLink to='/dashboard' className={({isActive})=>`font-medium ${isActive?'active-routes':''}`}>Dashboard</NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive?'active':''} to='/about'>About</NavLink>
+            <NavLink to='/about' className={({isActive})=>`font-medium ${isActive?'active-routes':''}`}>About</NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end space-x-4">
-        <div className="rounded-full p-2 bg-white"><img src="./cart.png" alt="" /></div>
-        <div className="rounded-full p-2 bg-white"><img src="./love.png" alt="" /></div>
+        <div className="rounded-full p-2 bg-white"><img src="/cart.png" alt="" /></div>
+        <div className="rounded-full p-2 bg-white"><img src="/love.png" alt="" /></div>
       </div>
     </div>
+   </div>
   );
 };
 

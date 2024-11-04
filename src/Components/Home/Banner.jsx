@@ -1,11 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
    <div>
-     <div className="bg-[#9538E2] border-[7px] rounded-[32px] text-white px-32 border-white flex flex-col justify-center items-center mb-96">
-      <Navbar></Navbar>
+     <div style={{borderRadius:'0 0 32px 32px'}} className="bg-[#9538E2] banner text-white mx-8 px-32 flex flex-col justify-center items-center mb-96">
+     
       <div className="flex flex-col justify-center items-center w-10/12 mx-auto text-white m-12 pb-56">
         <h1 className="text-5xl font-bold text-center leading-tight">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories
@@ -19,24 +18,8 @@ const Banner = () => {
         </button>
       </div>
       <div className="p-6 bg-white bg-opacity-30 border-[3px] rounded-[32px] absolute -bottom-2/4" >
-        <img className="max-h-[563px] rounded-3xl" src="./banner.jpg" alt="" />
+        <img className="max-h-[563px] rounded-3xl" src="/banner.jpg" alt="" />
       </div>
-    </div>
-    <div className="pt-20">
-        <h1 className="text-[40px] font-bold text-center text-black">Explore Cutting-Edge Gadgets</h1>
-
-    </div>
-    <div className="grid grid-cols-4 w-10/12 mt-12 mx-auto">
-        <div className="col-span-1 bg-white rounded-2xl p-6">
-            <div className="px-4 py-5"><NavLink to='/' className={({isActive})=> isActive? 'categoty-active':''}>All Product</NavLink></div>
-            <div className="px-4 py-5"><NavLink className={({isActive})=> isActive? 'categoty-active':''}>Laptops</NavLink></div>
-            <div className="px-4 py-5"><NavLink className={({isActive})=> isActive? 'categoty-active':''}>Phones</NavLink></div>
-            <div className="px-4 py-5"><NavLink className={({isActive})=> isActive? 'categoty-active':''}>Accessories</NavLink></div>
-            <div className="px-4 py-5"><NavLink className={({isActive})=> isActive? 'categoty-active':''}>Smart Watches</NavLink></div>
-            <div className="px-4 py-5"><NavLink className={({isActive})=> isActive? 'categoty-active':''}>MacBook</NavLink></div>
-            <div className="px-4 py-5"><NavLink className={({isActive})=> isActive? 'categoty-active':''}>Iphone</NavLink></div>
-        </div>
-        <div className="col-span-3 border"></div>
     </div>
    </div>
   );

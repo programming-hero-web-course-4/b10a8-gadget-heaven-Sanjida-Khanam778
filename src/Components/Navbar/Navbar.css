@@ -1,0 +1,13 @@
+.navbar{
+    border-radius: 32px 32px 0 0;
+}
+
+.active-routes{
+    color: #9538E2;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.active-home{
+    text-decoration: underline;
+}

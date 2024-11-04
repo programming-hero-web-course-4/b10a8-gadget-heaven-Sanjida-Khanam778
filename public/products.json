@@ -1,0 +1,113 @@
+[
+    {
+      "product_id": 1,
+      "product_title": "iPhone 13",
+      "product_image": "https://i.ibb.co.com/rttppLS/iphone13.jpg",
+      "category": "phones",
+      "price": 799,
+      "description": "Latest iPhone with A15 Bionic chip.",
+      "Specification": ["128GB Storage", "6.1-inch Super Retina XDR"],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": 2,
+      "product_title": "Sony WH-1000XM4",
+      "product_image": "https://i.ibb.co.com/px0jY3C/Sony-WH-1000-XM4.jpg",
+      "category": "accessories",
+      "price": 350,
+      "description": "Noise-canceling wireless headphones.",
+      "Specification": ["Wireless", "Over-ear", "30-hour battery life"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 3,
+      "product_title": "Acer Aspire 5",
+      "product_image": "https://i.ibb.co.com/dQ9cCZQ/Acer-Aspire-5.jpg",
+      "category": "laptops",
+      "price": 550,
+      "description": "Affordable laptop with AMD Ryzen processor.",
+      "Specification": ["8GB RAM", "256GB SSD", "15.6-inch Full HD"],
+      "availability": true,
+      "rating": 4.2
+    },
+    {
+      "product_id": 4,
+      "product_title": "Samsung Galaxy S21",
+      "product_image": "https://i.ibb.co.com/1XjZJs4/Samsung-Galaxy-S21.jpg",
+      "category": "phones",
+      "price": 750,
+      "description": "Samsung's flagship smartphone with high-end camera.",
+      "Specification": ["128GB Storage", "6.2-inch Dynamic AMOLED 2X"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 5,
+      "product_title": "HP Pavilion 15",
+      "product_image": "https://i.ibb.co.com/5s1JQ8K/HP-Pavilion-15.png",
+      "category": "laptops",
+      "price": 700,
+      "description": "Reliable laptop for everyday use.",
+      "Specification": ["12GB RAM", "512GB SSD", "15.6-inch Full HD"],
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": 6,
+      "product_title": "Anker PowerCore 10000",
+      "product_image": "https://i.ibb.co.com/Tkcx5wY/Anker-Power-Core-10000.jpg",
+      "category": "accessories",
+      "price": 50,
+      "description": "Compact 10000mAh portable charger.",
+      "Specification": ["10000mAh", "USB-A and USB-C Ports", "Compact Design"],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": 7,
+      "product_title": "MacBook Air M1",
+      "product_image": "https://i.ibb.co.com/262tjT9/Mac-Book-Air-M1.jpg",
+      "category": "laptops",
+      "price": 999,
+      "description": "Apple's thin and powerful M1 laptop.",
+      "Specification": ["8GB RAM", "256GB SSD", "13.3-inch Retina Display"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 8,
+      "product_title": "Dell XPS 13",
+      "product_image": "https://i.ibb.co.com/znCgnCX/Dell-XPS-13.jpg",
+      "category": "laptops",
+      "price": 1200,
+      "description": "High-end laptop with stunning display and performance.",
+      "Specification": ["16GB RAM", "512GB SSD", "13.4-inch UHD+ Display"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 9,
+      "product_title": "Microsoft Surface Laptop 4",
+      "product_image": "https://i.ibb.co.com/ypnprCK/Microsoft-Surface-Laptop-4.png",
+      "category": "laptops",
+      "price": 1100,
+      "description": "Lightweight laptop with high performance.",
+      "Specification": ["8GB RAM", "256GB SSD", "13.5-inch PixelSense Display"],
+      "availability": false,
+      "rating": 4.6
+    },
+    {
+      "product_id": 10,
+      "product_title": "Lenovo ThinkPad E15",
+      "product_image": "https://i.ibb.co.com/jrfPHSH/Lenovo-Think-Pad-E15.jpg",
+      "category": "laptops",
+      "price": 850,
+      "description": "Durable laptop ideal for business.",
+      "Specification": ["16GB RAM", "1TB SSD", "15.6-inch Full HD"],
+      "availability": true,
+      "rating": 4.5
+    }
+  ]
+  

@@ -5,14 +5,7 @@
 
 body {
   font-family: "Sora";
+  background-color: #09080F05;  
 }
 
-.active{
-  text-decoration: underline;
-}
 
-.categoty-active{
-  text-decoration: none;
-  background-color: #9538E2;
-  color: white;
-}
