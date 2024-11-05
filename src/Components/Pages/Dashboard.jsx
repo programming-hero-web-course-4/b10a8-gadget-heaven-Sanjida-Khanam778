@@ -22,10 +22,8 @@ const Dashboard = () => {
           </NavLink>
         </div>
       </div>
-      <MyContext.Provider value='none'>
 
       <Outlet></Outlet>
-      </MyContext.Provider>
     </div>
   );
 };

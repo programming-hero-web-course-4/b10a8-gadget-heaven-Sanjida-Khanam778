@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
+import { getAllCartItems } from "../Utilities/Index";
+import CartItem from "./CartItem";
+
 const Cart = () => {
-  const handleSort=()=>{
-    
-  }
-    return (
-        <div>
-            
-            <div className="flex justify-between items-center px-32 mb-8">
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const cartItems = getAllCartItems();
+    setProducts(cartItems);
+  }, []);
+
+  // console.log(total);
+  const handleSort = () => {};
+  return (
+    <div>
+      <div className="flex justify-between items-center px-32 mb-8">
         <div className="font-bold text-2xl">Cart</div>
         <div className="flex items-center">
           <p className="font-bold text-2xl mr-8">Total cost:</p>
 
-          <button onClick={handleSort} className="px-5 py-3 rounded-[32px] text-lg font-semibold border-2 mr-4 border-[#9538E2]">
+          <button
+            onClick={handleSort}
+            className="px-5 py-3 rounded-[32px] text-lg font-semibold border-2 mr-4 border-[#9538E2]"
+          >
             Sort by Price <img className="inline ml-2" src="/sort.png" alt="" />
           </button>
 
@@ -19,8 +30,13 @@ const Cart = () => {
           </button>
         </div>
       </div>
-        </div>
-    );
+      <div className="px-32">
+        {products.map((item) => (
+          <CartItem key={item.product_id} product={item}></CartItem>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Cart;

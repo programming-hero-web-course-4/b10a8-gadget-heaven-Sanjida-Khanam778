@@ -4,7 +4,6 @@ import Wishlist from "./Wishlist";
 
 const ListItems = () => {
     const {pathname} = useLocation()
-
     return (
         <div>
             {

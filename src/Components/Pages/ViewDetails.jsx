@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { addCart } from "../Utilities/Index";
+import { addCart, getAllCartItems } from "../Utilities/Index";
 
 const ViewDetails = () => {
   const [data, setData] = useState(false);
+  const [isCart, setIsCart] = useState(false)
   const { productId } = useParams();
 
   useEffect(() => {
@@ -18,17 +17,20 @@ const ViewDetails = () => {
   const handleFind = (datas) => {
     const findData = datas.find((item) => item.product_id == productId);
     setData(findData);
+    const cartItems = getAllCartItems()
+    const isExist = cartItems.find(item=> item.product_id === datas.product_id)
+    if(isExist){
+        setIsCart(true)
+    }
+
   };
 
   if (!data) {
     return "";
   }
   const handleAddToCart = (data) => {
-    toast.success("Item Added to Cart", {
-      hideProgressBar: true,
-      position: "top-center",
-    });
     addCart(data)
+    setIsCart(true)
   };
 
   const handleAddToWishlist = () => {
@@ -40,7 +42,6 @@ const ViewDetails = () => {
 
   return (
     <div>
-      <ToastContainer></ToastContainer>
       <div className=" flex flex-col">
         <div className="bg-[#9538E2] pb-60 text-white flex flex-col justify-center items-center gap-4 py-8">
           <h1 className="font-bold text-3xl">Product Details</h1>
@@ -87,16 +88,17 @@ const ViewDetails = () => {
                 edit={false}
                 isHalf={true}
               />
-              <p className="text-sm font-medium px-[14px] py-[7px] rounded-[32px] bg-[#09080F] bg-opacity-5">
+              <p className="text-sm font-medium px-[14px] py-[7px] rounded-[32px] bg-[#09080F] text-black text-opacity-80 bg-opacity-5">
                 {data.rating}
               </p>
             </div>
             <div className="flex items-center gap-4 mt-4">
               <button
+              disabled={isCart}
                 onClick={()=>handleAddToCart(data)}
-                className="text-lg font-bold px-5 py-3 bg-[#9538E2] rounded-[32px] text-white"
+                className={`text-lg font-bold px-5 py-3 bg-[#9538E2] rounded-[32px] text-white ${isCart?'bg-gray-300 ':''}`}
               >
-                Add To card{" "}
+                Add To card
                 <img
                   className="inline ml-2 text-white"
                   src="/cart2.png"
