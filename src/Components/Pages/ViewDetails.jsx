@@ -1,9 +1,9 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-export const MyContext = createContext(null);
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { addCart } from "../Utilities/Index";
 
 const ViewDetails = () => {
   const [data, setData] = useState(false);
@@ -14,7 +14,7 @@ const ViewDetails = () => {
       .then((res) => res.json())
       .then((datas) => handleFind(datas));
   }, [productId]);
-  
+
   const handleFind = (datas) => {
     const findData = datas.find((item) => item.product_id == productId);
     setData(findData);
@@ -23,12 +23,12 @@ const ViewDetails = () => {
   if (!data) {
     return "";
   }
-
-  const handleAddToCart = () => {
+  const handleAddToCart = (data) => {
     toast.success("Item Added to Cart", {
       hideProgressBar: true,
       position: "top-center",
     });
+    addCart(data)
   };
 
   const handleAddToWishlist = () => {
@@ -93,7 +93,7 @@ const ViewDetails = () => {
             </div>
             <div className="flex items-center gap-4 mt-4">
               <button
-                onClick={handleAddToCart}
+                onClick={()=>handleAddToCart(data)}
                 className="text-lg font-bold px-5 py-3 bg-[#9538E2] rounded-[32px] text-white"
               >
                 Add To card{" "}
