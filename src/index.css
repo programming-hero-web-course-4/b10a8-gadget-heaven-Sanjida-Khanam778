@@ -8,4 +8,6 @@ body {
   background-color: #09080F05;  
 }
 
-
+html{
+  overflow-y: scroll
+}

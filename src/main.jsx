@@ -18,19 +18,20 @@ const router = createBrowserRouter([
         path: "/",
         element: <Navigate to='/home/products/allProducts' replace></Navigate>,
         loader: ()=> fetch('./products.json'),
-       
+      },
+      {
+        path: '/details/:productId',
+        element: <ViewDetails></ViewDetails>,
+
       },
       {
         path: '/home',
         element: <Home></Home>,
         children:[
-          
           {
             path:'/home/products/:category',
             element:<AllProducts></AllProducts>,
           },
-          
-         
         ]
       },
       {
@@ -45,11 +46,7 @@ const router = createBrowserRouter([
       {
         path: '/about'
       },
-      {
-        path: '/details',
-        element: <ViewDetails></ViewDetails>,
-        loader: ()=> fetch('./products.json'),
-      }
+     
     ],
   },
 ]);
