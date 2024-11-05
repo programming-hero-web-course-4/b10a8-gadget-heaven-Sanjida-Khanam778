@@ -1,7 +1,7 @@
 const Statistics = () => {
     return (
-        <div>
-            Statistics
+        <div className="p-32">
+            <h1 className="text-5xl font-bold text-center">No Data to Show Statistics</h1>
         </div>
     );
 };

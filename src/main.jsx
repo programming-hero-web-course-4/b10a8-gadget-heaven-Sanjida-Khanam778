@@ -8,11 +8,14 @@ import Statistics from "./Components/Pages/Statistics";
 import Dashboard from "./Components/Pages/Dashboard";
 import AllProducts from "./Components/Home/AllProducts";
 import ViewDetails from "./Components/Pages/ViewDetails";
+import ListItems from "./Components/Dashboard/ListItems";
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -41,7 +44,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: '/dashboard',
+            element: <Navigate to='/dashboard/purchase/cart' replace></Navigate>
+          },
+          {
+            path: '/dashboard/purchase/:purchaseId',
+            element: <ListItems></ListItems>
+          }
+        ]
       },
       {
         path: '/about'
