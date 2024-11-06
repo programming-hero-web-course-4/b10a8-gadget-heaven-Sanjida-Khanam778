@@ -6,7 +6,7 @@ const CartItem = ({ product }) => {
 //   console.log(total)
   return (
     <div className="bg-white mb-6 p-8 grid grid-cols-5 rounded-3xl gap-8">
-      <div className=" h-32 w-52">
+      <div className=" h-32 xl:w-52">
         <img className="h-full w-full object-cover rounded-xl" src={product_image} alt="" />
       </div>
       <div className="col-span-4">

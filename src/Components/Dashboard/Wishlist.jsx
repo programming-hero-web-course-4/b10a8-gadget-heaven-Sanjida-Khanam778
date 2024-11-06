@@ -8,7 +8,6 @@ const Wishlist = () => {
         const wishItems = getAllWishItems();
         setProducts(wishItems);
     }, []);
-    console.log(products)
 
     return (
         <div className="px-32">

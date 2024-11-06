@@ -18,7 +18,7 @@ const FAQ = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-12 px-32 py-12">
+        <div className="flex gap-12 items-center px-32 py-12">
           <div className="w-2/3">
             <img className="border rounded-3xl h-full" src="/faq.png" alt="" />
           </div>
