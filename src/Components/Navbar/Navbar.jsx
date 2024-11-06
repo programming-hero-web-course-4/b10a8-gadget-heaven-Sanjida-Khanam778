@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.css";
+import { getAllCartItems, getAllWishItems } from "../Utilities/Index";
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const cartItem = getAllCartItems()
+  const [data, setData] = useState(cartItem)
+  const wishItem = getAllWishItems()
+  useEffect(()=>{
+    setData(cartItem)
+  },[])
+  // console.log(data)
 
   return (
     <div
@@ -110,16 +118,16 @@ const Navbar = () => {
             <div className="rounded-full border p-2 bg-white">
               <img src="/cart.png" alt="" />
             </div>
-            <div className="px-3 py-1 bg-white rounded-full absolute hidden -top-3 -right-3">
-              <p className="text-red-600 text-sm font-medium">1</p>
+            <div className={`px-3 py-1 bg-white rounded-full absolute -top-3 -right-3 ${cartItem.length===0?'hidden':''}`}>
+              <p className="text-red-600 text-sm font-medium">{cartItem.length}</p>
             </div>
           </div>
           <div className="relative">
             <div className="rounded-full border p-2 bg-white">
               <img src="/love.png" alt="" />
             </div>
-            <div className="px-3 py-1 bg-white rounded-full absolute -top-3 hidden -right-3">
-              <p className="text-red-600 text-sm font-medium">2</p>
+            <div className={`px-3 py-1 bg-white rounded-full absolute -top-3 -right-3 ${cartItem.length===0?'hidden':''}`}>
+              <p className="text-red-600 text-sm font-medium">{wishItem.length}</p>
             </div>
           </div>
         </div>
