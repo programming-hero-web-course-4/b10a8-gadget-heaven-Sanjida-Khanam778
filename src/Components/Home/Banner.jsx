@@ -16,9 +16,11 @@ const Banner = () => {
             next level. From smart devices to the coolest accessories, we have
             it all!
           </p>
-          <button className="text-xl font-bold rounded-[32px] px-8 py-4 bg-white text-[#9538E2]">
-            <Link to="/dashboard">Shop Now</Link>
-          </button>
+          <Link to="/dashboard">
+            <button className="text-xl font-bold rounded-[32px] px-8 py-4 bg-white text-[#9538E2]">
+              Shop Now
+            </button>
+          </Link>
         </div>
         <div className="p-6 bg-white bg-opacity-30 border-[3px] rounded-[32px] absolute -bottom-[65%]">
           <img className="max-h-[560px] rounded-3xl" src="/banner.jpg" alt="" />
