@@ -103,9 +103,9 @@ const ViewDetails = () => {
             </div>
             <div className="flex items-center gap-4 mt-4">
               <button
-              disabled={isCart}
+              
                 onClick={()=>handleAddToCart(data)}
-                className={`text-lg font-bold px-5 py-3 bg-[#9538E2] rounded-[32px] text-white ${isCart?'bg-gray-300 ':''}`}
+                className={`text-lg font-bold px-5 py-3 bg-[#9538E2] rounded-[32px] text-white`}
               >
                 Add To card
                 <img
