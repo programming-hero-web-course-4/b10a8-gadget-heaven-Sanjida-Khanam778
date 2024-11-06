@@ -18,7 +18,7 @@ __*Toast Notifications:*__ ToastContainer from react-toastify is used to handle 
 
 __*HelmetProvider:*__ This is used for Dynamic title of each page. Different titles for different pages are used by using HelmetProvider.
 
-## __*Handling and managing data (Local storage):*__
+## __*Handling and managing data:*__
 
 Local Storage is used in this project for handling and managing data.
 
