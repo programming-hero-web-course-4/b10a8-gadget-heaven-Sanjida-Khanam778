@@ -1,4 +1,4 @@
-# Live Website Link: https://outgoing-snails.surge.sh/
+# Live Website Link: https://outgoing-snails.surge.sh
 
 ##  Requirement Document Link: 
 
