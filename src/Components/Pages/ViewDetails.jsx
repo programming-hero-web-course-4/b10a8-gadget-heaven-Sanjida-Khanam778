@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { addCart, getAllCartItems } from "../Utilities/Index";
+import { addCart, addWishlist, getAllCartItems, getAllWishItems } from "../Utilities/Index";
 
 const ViewDetails = () => {
   const [data, setData] = useState(false);
   const [isCart, setIsCart] = useState(false)
+  const [isWishlist, setIsWishlist] = useState(false)
   const { productId } = useParams();
 
   useEffect(() => {
@@ -15,14 +16,19 @@ const ViewDetails = () => {
   }, [productId]);
 
   const handleFind = (datas) => {
-    const findData = datas.find((item) => item.product_id == productId);
+    const findData = [...datas].find((item) => item.product_id == productId);
     setData(findData);
     const cartItems = getAllCartItems()
-    const isExist = cartItems.find(item=> item.product_id === datas.product_id)
-    if(isExist){
+    const cartExist = cartItems.find(item=> item.product_id === datas.product_id)
+    if(cartExist){
         setIsCart(true)
     }
-
+    const wishItems = getAllWishItems();
+    // console.log(wishItems)
+    const wishExist = wishItems.find(item=>item.product_id==datas.product_id)
+    if(wishExist){
+        setIsWishlist(true)
+    }
   };
 
   if (!data) {
@@ -33,11 +39,9 @@ const ViewDetails = () => {
     setIsCart(true)
   };
 
-  const handleAddToWishlist = () => {
-    toast.success("Item added to wishlist", {
-      hideProgressBar: true,
-      position: "top-center",
-    });
+  const handleAddToWishlist = (data) => {
+    addWishlist(data)
+    setIsWishlist(true)
   };
 
   return (
@@ -106,9 +110,9 @@ const ViewDetails = () => {
                 />
               </button>
 
-              <button onClick={handleAddToWishlist}>
+              <button disabled={isWishlist} onClick={()=>handleAddToWishlist(data)}>
                 <img
-                  className="border rounded-full p-4"
+                  className={`border rounded-full p-4 ${isWishlist?'bg-gray-300 opacity-50':''}`}
                   src="/love.png"
                   alt=""
                 />

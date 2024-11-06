@@ -10,13 +10,13 @@ const Dashboard = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
         <div className="gap-6 flex">
-          <NavLink to="/dashboard/purchase/cart">
-            <button className="rounded-[32px] text-[#9538e2] bg-white px-16 py-4 font-extrabold text-lg">
+          <NavLink className={({isActive})=>`rounded-[32px] text-lg ${isActive?'text-[#9538e2] bg-white font-extrabold':'border border-white font-medium'}`} to="/dashboard/purchase/cart">
+            <button className=" px-16 py-4">
               Cart
             </button>
           </NavLink>
-          <NavLink to="/dashboard/purchase/wishlist">
-            <button className="rounded-[32px] border border-white px-16 py-4 font-medium text-lg">
+          <NavLink className={({isActive})=>`rounded-[32px] text-lg ${isActive?'text-[#9538e2] bg-white font-extrabold':'border border-white font-medium'}`} to="/dashboard/purchase/wishlist">
+            <button className="px-16 py-4">
               Wishlist
             </button>
           </NavLink>

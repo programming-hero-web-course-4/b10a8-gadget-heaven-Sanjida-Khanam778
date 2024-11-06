@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
 
 const CartItem = ({ product }) => {
 //   console.log(product);
-  const [total, setTotal] = useState(0);
   const { product_title, product_image, price, description } = product;
-  useEffect(()=>{
-     
-        setTotal(total+product.price)
-      
-
-  },[])
-  console.log(total)
+  
+//   console.log(total)
   return (
     <div className="bg-white mb-6 p-8 grid grid-cols-5 gap-8">
       <div className=" h-32 w-52">

@@ -8,7 +8,6 @@ const getAllCartItems =()=>{
         return allCartItems
     }
     else{
-        console.log([])
         return []
     }
 }
@@ -17,7 +16,7 @@ const addCart = (product) => {
   const cartItems = getAllCartItems()
   const isExist = cartItems.find(item=> item.product_id === product.product_id)
   if(isExist){
-    return toast.error("Item already added", {
+    return toast.error("Item already added to cart", {
         hideProgressBar: true,
         position: "top-center",
       })
@@ -30,4 +29,36 @@ const addCart = (product) => {
   });
 }
 
-export {addCart, getAllCartItems}
+const getAllWishItems =()=>{
+    const getWishItems = localStorage.getItem('wishlist')
+    if(getWishItems){
+        const allWishItems = JSON.parse(getWishItems)
+        return allWishItems
+    }
+    else{
+        return []
+    }
+}
+
+const addWishlist = (product) => {
+    const wishItems = getAllWishItems()
+    const isExist = wishItems.find(item=> item.product_id == product.product_id)
+    if(isExist){
+      return toast.error("Item already added to wishlist", {
+          hideProgressBar: true,
+          position: "top-center",
+        })
+    }
+    wishItems.push(product)
+    localStorage.setItem('wishlist', JSON.stringify(wishItems))
+    toast.success("Item Added to Wishlist", {
+      hideProgressBar: true,
+      position: "top-center",
+    });
+  }
+
+  const removeItem = ()=>{
+    localStorage.removeItem('cart')
+  }
+
+export {addCart, getAllCartItems, addWishlist, getAllWishItems, removeItem}
