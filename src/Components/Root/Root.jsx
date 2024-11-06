@@ -10,7 +10,7 @@ const Root = () => {
     <HelmetProvider>
       <div>     
       <ToastContainer></ToastContainer>
-      <div className="mx-8 pt-8">
+      <div className="px-8 pt-8 bg-white">
       <Navbar></Navbar>
       </div>
       <Outlet></Outlet>

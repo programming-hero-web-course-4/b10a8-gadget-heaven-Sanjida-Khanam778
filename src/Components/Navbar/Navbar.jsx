@@ -11,14 +11,13 @@ const Navbar = () => {
   useEffect(()=>{
     setData(cartItem)
   },[])
-  // console.log(data)
 
   return (
     <div
       className={`${
         pathname.includes("/home")
           ? "bg-[#9538E2] text-white navbar px-32 "
-          : "bg-transparent"
+          : "px-32"
       }`}
     >
       <div className="navbar">
@@ -66,7 +65,10 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+          <div className="flex items-center gap-5">
+            <img className="h-7" src="/favicon-16x16.png" alt="" />
           <a className="text-xl font-bold">Gadget Heaven</a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu-horizontal space-x-12">
@@ -103,12 +105,12 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/about"
+                to="/faq"
                 className={({ isActive }) =>
                   `font-medium ${isActive ? "active-routes" : ""}`
                 }
               >
-                About
+                FAQ
               </NavLink>
             </li>
           </ul>

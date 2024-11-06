@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { addCart, addWishlist, getAllCartItems, getAllWishItems } from "../Utilities/Index";
+import { Helmet } from "react-helmet-async";
 
 const ViewDetails = () => {
+  
   const [data, setData] = useState(false);
   const [isCart, setIsCart] = useState(false)
   const [isWishlist, setIsWishlist] = useState(false)
@@ -46,6 +48,9 @@ const ViewDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Details || Gadget Heaven</title>
+      </Helmet>
       <div className=" flex flex-col">
         <div className="bg-[#9538E2] pb-60 text-white flex flex-col justify-center items-center gap-4 py-8">
           <h1 className="font-bold text-3xl">Product Details</h1>

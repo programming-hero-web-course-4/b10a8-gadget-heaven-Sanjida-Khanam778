@@ -10,6 +10,7 @@ import AllProducts from "./Components/Home/AllProducts";
 import ViewDetails from "./Components/Pages/ViewDetails";
 import ListItems from "./Components/Dashboard/ListItems";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
+import FAQ from "./Components/Pages/FAQ";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,8 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: '/about'
+        path: '/faq',
+        element: <FAQ></FAQ>,
       },
      
     ],

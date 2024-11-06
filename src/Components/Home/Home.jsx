@@ -3,11 +3,15 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Banner from "./Banner";
 import './Home.css'
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Home Page || Gadget Heaven</title>
+      </Helmet>
         <Banner></Banner>
       <div className="pt-20">
         <h1 className="text-[40px] font-bold text-center text-black">
