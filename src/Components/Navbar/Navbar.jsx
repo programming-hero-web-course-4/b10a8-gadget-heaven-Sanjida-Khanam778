@@ -119,7 +119,7 @@ const Navbar = () => {
               <img src="/cart.png" alt="" />
             </div>
             <div className={`px-3 py-1 bg-white rounded-full absolute -top-3 -right-3 ${cartItem.length===0?'hidden':''}`}>
-              <p className="text-red-600 text-sm font-medium">{cartItem.length}</p>
+              <p className="text-red-600 text-sm font-medium">{data.length}</p>
             </div>
           </div>
           <div className="relative">

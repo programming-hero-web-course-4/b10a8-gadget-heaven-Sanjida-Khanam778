@@ -3,10 +3,12 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { HelmetProvider } from "react-helmet-async";
 
 const Root = () => {
   return (
-    <div>     
+    <HelmetProvider>
+      <div>     
       <ToastContainer></ToastContainer>
       <div className="mx-8 pt-8">
       <Navbar></Navbar>
@@ -14,6 +16,7 @@ const Root = () => {
       <Outlet></Outlet>
       <Footer></Footer>
     </div>
+    </HelmetProvider>
   );
 };
 

@@ -15,7 +15,8 @@ const Home = () => {
         </h1>
       </div>
       <div className="grid grid-cols-4 w-10/12 mt-12 mx-auto gap-6">
-        <div className="bg-white rounded-2xl p-6 space-y-6 flex flex-col">
+       <div>
+       <div className="bg-white rounded-2xl p-6 space-y-6 flex flex-col">
           <NavLink
             to={`/home/products/allProducts`}
             className={({ isActive }) => (isActive ? "active-category px-6 py-4 bg-[#09080F05] rounded-[32px] " : "px-6 py-4 bg-[#09080F05] rounded-[32px] ")}
@@ -59,6 +60,7 @@ const Home = () => {
             Iphone
           </NavLink>
         </div>
+       </div>
 
         <div className="col-span-3">
           <Outlet></Outlet>
